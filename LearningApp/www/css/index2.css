@@ -50,6 +50,7 @@ button {
 }
 
 #sideMenu {
+    margin-top: 0px;
     height: 100%;
     width: 200px;
     background-color: gray;
@@ -61,7 +62,20 @@ button {
 }
 .menuItem {
     color: white;
+    text-align: left;
+    position: relative;
+    margin-left: 5%;
 }
 #sideMenuButton{
-
+    z-index: 99999;
+}
+#logOutButton {
+    position: relative;
+    display: inline;
+    margin-top: 5px;
+}
+#sideMenuCloseButton{
+    position: relative;
+    display: inline;
+    margin-top: 5px;
 }
