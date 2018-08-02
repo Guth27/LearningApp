@@ -5,6 +5,7 @@
     document.getElementById("logOutButton").addEventListener("click", logOut);
     document.getElementById("menuItem_Profile").addEventListener("click", profileClicked);
     document.getElementById("menuItem_Options").addEventListener("click", optionsClicked);
+    document.getElementById("menuItem_Main").addEventListener("click", mainmenuClicked);
 
     function menuButtonClicked() {
         console.log(menu.style.left);
@@ -24,5 +25,8 @@
     }
     function optionsClicked() {
         window.location.href = "optionsScreen.html";
+    }
+    function mainmenuClicked() {
+        window.location.href = "mainScreen.html";
     }
 })();
