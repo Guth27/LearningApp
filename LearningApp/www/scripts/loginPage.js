@@ -29,7 +29,7 @@
         tx.executeSql('CREATE TABLE IF NOT EXISTS registeredusers (id integer unique, username, email unique, passwd)');
         tx.executeSql("SELECT * FROM registeredusers WHERE username=\"" + username + "\" AND passwd=\"" + passwd + "\"", [], function (tx, value) {
             if (value.rows.length == 1) {
-                console.log(value.rows.item(0)['email']);
+                console.log("Lenght:" + value.rows.lenght);
 
 
                 tx.executeSql('CREATE TABLE IF NOT EXISTS currentuser (username, email)');
