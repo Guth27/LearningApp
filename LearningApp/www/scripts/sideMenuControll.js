@@ -3,6 +3,8 @@
     document.getElementById("sideMenuButton").addEventListener("click", menuButtonClicked);
     document.getElementById("sideMenuCloseButton").addEventListener("click", menuButtonClicked);
     document.getElementById("logOutButton").addEventListener("click", logOut);
+    document.getElementById("menuItem_Profile").addEventListener("click", profileClicked);
+    document.getElementById("menuItem_Options").addEventListener("click", optionsClicked);
 
     function menuButtonClicked() {
         console.log(menu.style.left);
@@ -15,5 +17,12 @@
     }
     function logOut() {
         window.location.href = "index.html";
+    }
+
+    function profileClicked() {
+        window.location.href = "profileScreen.html";
+    }
+    function optionsClicked() {
+        window.location.href = "optionsScreen.html";
     }
 })();

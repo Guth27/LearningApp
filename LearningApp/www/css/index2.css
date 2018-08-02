@@ -42,7 +42,13 @@ div {
 }
 
 button {
+    margin-top:5px;
     margin-left: 10px;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    overflow: hidden;
+    outline: 2px white solid;
 }
 
 #sideMenu {
@@ -58,9 +64,13 @@ button {
 }
 .menuItem {
     color: white;
+    font-size: medium;
+    font-weight: bold;
     text-align: left;
     position: relative;
     margin-left: 5%;
+    border-color: white;
+    border-bottom: 2px solid;
 }
 #sideMenuButton{
     z-index: 99999;
