@@ -30,7 +30,7 @@
         document.getElementById("test2").addEventListener("click", jsPlumbTest2);
     }
     function jsPlumbTest1() { window.location.href = "jsPlumbTest1.html"; }
-    function jsPlumbTest2() { }
+    function jsPlumbTest2() { window.location.href = "jsPlumbTest2.html"; }
 
 
     function loadUp() {
