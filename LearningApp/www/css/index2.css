@@ -56,12 +56,21 @@ ul {
 }
 
 .mainSubjectElement {
+    margin-left: 5px;
     background-color: grey;
     text-align: left;
     position: relative;
     margin-top: 20px;
     font-size: 20px;
-    height: 35px;
+    height: 40px;
+}
+.mainSubjectElementWrapper {
+    background-color: black;
+    text-align: left;
+    position: relative;
+    margin-top: 20px;
+    font-size: 20px;
+    height: 43px;
 }
 
 #sideMenu {

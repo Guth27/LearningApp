@@ -8,26 +8,35 @@
         var entry = document.createElement('li');
         var listItemBody = document.createElement('div');
         listItemBody.setAttribute('class', 'mainSubjectElement');
-        listItemBody.setAttribute('id', 'test1');
+        var wrapperBody = document.createElement('div');
+        wrapperBody.setAttribute('id', 'test1');
+        wrapperBody.setAttribute('class', 'mainSubjectElementWrapper');
 
-        entry.appendChild(listItemBody);
+        entry.appendChild(wrapperBody);
+        wrapperBody.appendChild(listItemBody);
         listItemBody.appendChild(document.createTextNode("JsPlumbtest Connection"));
 
         var entry2 = document.createElement('li');
         var listItemBody2 = document.createElement('div');
         listItemBody2.setAttribute('class', 'mainSubjectElement');
-        listItemBody2.setAttribute('id', 'test2');
-
-        entry2.appendChild(listItemBody2);
-        listItemBody2.appendChild(document.createTextNode("JsPlumbtest Drag"));
-
-        var entry3 = document.createElement('li');
-        var listItemBody3 = document.createElement('div');
-        listItemBody3.setAttribute('class', 'mainSubjectElement');
-        listItemBody3.setAttribute('id', 'test3');
-
-        entry3.appendChild(listItemBody3);
-        listItemBody3.appendChild(document.createTextNode("JsPlumbtest CreatingConnection"));
+        var wrapperBody2 = document.createElement('div');
+        wrapperBody2.setAttribute('id', 'test2');
+        wrapperBody2.setAttribute('class', 'mainSubjectElementWrapper');
+       
+        entry2.appendChild(wrapperBody2);
+        wrapperBody2.appendChild(listItemBody2);
+        listItemBody2.appendChild(document.createTextNode("JsPlumbtest Drag and Grid"));
+       
+       var entry3 = document.createElement('li');
+       var listItemBody3 = document.createElement('div');
+       listItemBody3.setAttribute('class', 'mainSubjectElement');
+       var wrapperBody3 = document.createElement('div');
+       wrapperBody3.setAttribute('id', 'test3');
+       wrapperBody3.setAttribute('class', 'mainSubjectElementWrapper');
+       
+       entry3.appendChild(wrapperBody3);
+       wrapperBody3.appendChild(listItemBody3);
+       listItemBody3.appendChild(document.createTextNode("JsPlumbtest CreatingConnection"));
 
 
 
