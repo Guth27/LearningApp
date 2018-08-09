@@ -1,5 +1,30 @@
 ﻿(function () {
     loadUp();
+    appendList();
+
+
+    function appendList() {
+        var list = document.getElementById('mainSubjectList');
+        var entry = document.createElement('li');
+        var listItemBody = document.createElement('div');
+        listItemBody.setAttribute('class', 'mainSubjectElement');
+        listItemBody.setAttribute('id', 'test1');
+
+        entry.appendChild(listItemBody);
+        listItemBody.appendChild(document.createTextNode("JsPlumbtest1"));
+
+        var entry2 = document.createElement('li');
+        var listItemBody2 = document.createElement('div');
+        listItemBody2.setAttribute('class', 'mainSubjectElement');
+        listItemBody2.setAttribute('id', 'test2');
+
+        entry2.appendChild(listItemBody2);
+        listItemBody2.appendChild(document.createTextNode("JsPlumbtest2"));
+
+
+        list.appendChild(entry);
+        list.appendChild(entry2);
+    }
 
     function loadUp() {
         var db = window.openDatabase("Database", "1.0", "Users", 200000);

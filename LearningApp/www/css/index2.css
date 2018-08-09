@@ -51,6 +51,19 @@ button {
     outline: 2px white solid;
 }
 
+ul {
+    list-style-type: none;
+}
+
+.mainSubjectElement {
+    background-color: grey;
+    text-align: left;
+    position: relative;
+    margin-top: 20px;
+    font-size: 20px;
+    height: 35px;
+}
+
 #sideMenu {
     margin-top: 0px;
     height: 100%;
