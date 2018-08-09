@@ -3,7 +3,10 @@
         var common = {
             isSource: true,
             isTarget: true,
-            connector: ["Straight"]
+            connector: ["Straight"],
+            hoverPaintStyle: { outlineStroke: "red", strokeWidth: 3 },
+            connectorStyle: { outlineStroke: "red", strokeWidth: 3 },
+            connectorHoverStyle: { strokeWidth: 3 }
         };
 
         jsPlumb.addEndpoint("item_1", {
