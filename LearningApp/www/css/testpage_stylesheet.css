@@ -1,0 +1,56 @@
+﻿body {
+}
+
+#diagramContainer {
+    padding: 20px;
+    width: 80%;
+    height: 200px;
+    border: 1px solid gray;
+    margin-top: 0px;
+}
+
+.item {
+    height: 80px;
+    width: 80px;
+    border: 1px solid blue;
+    float: left;
+    margin-top: 0px;
+}
+#sideMenu {
+    margin-top: 0px;
+    height: 100%;
+    width: 200px;
+    background-color: gray;
+    display: inline-block;
+    top: 0px;
+    position: fixed;
+    left: -200px;
+    transition: all 0.5s ease-in-out;
+}
+
+.menuItem {
+    color: white;
+    font-size: medium;
+    font-weight: bold;
+    text-align: left;
+    position: relative;
+    margin-left: 5%;
+    border-color: white;
+    border-bottom: 2px solid;
+}
+
+#sideMenuButton {
+    z-index: 99999;
+}
+
+#logOutButton {
+    position: relative;
+    display: inline;
+    margin-top: 5px;
+}
+
+#sideMenuCloseButton {
+    position: relative;
+    display: inline;
+    margin-top: 5px;
+}

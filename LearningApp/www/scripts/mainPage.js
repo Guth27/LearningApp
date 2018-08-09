@@ -24,7 +24,14 @@
 
         list.appendChild(entry);
         list.appendChild(entry2);
+
+
+        document.getElementById("test1").addEventListener("click", jsPlumbTest1);
+        document.getElementById("test2").addEventListener("click", jsPlumbTest2);
     }
+    function jsPlumbTest1() { window.location.href = "jsPlumbTest1.html"; }
+    function jsPlumbTest2() { }
+
 
     function loadUp() {
         var db = window.openDatabase("Database", "1.0", "Users", 200000);

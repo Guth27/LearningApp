@@ -98,3 +98,19 @@ ul {
     display: inline;
     margin-top: 5px;
 }
+
+#diagramContainer {
+    padding: 20px;
+    width: 80%;
+    height: 200px;
+    border: 1px solid gray;
+    margin-top: 0px;
+}
+
+.item {
+    height: 80px;
+    width: 80px;
+    border: 1px solid blue;
+    float: left;
+    margin-top: 0px;
+}
