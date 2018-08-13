@@ -4,6 +4,8 @@
 
 
     function appendList() {
+
+        //tests
         var list = document.getElementById('mainSubjectList');
         var entry = document.createElement('li');
         var listItemBody = document.createElement('div');
@@ -48,11 +50,40 @@
         document.getElementById("test1").addEventListener("click", jsPlumbTest1);
         document.getElementById("test2").addEventListener("click", jsPlumbTest2);
         document.getElementById("test3").addEventListener("click", jsPlumbTest3);
+
+        //get the base topics from the database
+        var db = window.openDatabase("Database", "1.0", "Topics", 200000);
+        db.transaction(readTopics, errorCB, successCB);
+        
     }
     function jsPlumbTest1() { window.location.href = "jsPlumbTest1.html"; }
     function jsPlumbTest2() { window.location.href = "jsPlumbTest2.html"; }
     function jsPlumbTest3() { window.location.href = "jsPlumbTest3.html"; }
 
+    function readTopics(tx) {
+        tx.executeSql('CREATE TABLE IF NOT EXISTS maintopics (id integer unique, topicname)');
+        console.log("1");
+        //tx.executeSql("INSERT INTO maintopics VALUES(0,\'Mathematics\')");
+        tx.executeSql('SELECT * FROM maintopics', [], function (tx, value) {
+            for (i = 0; i < value.rows.length; i++){
+            console.log(value.rows.length);
+                var list = document.getElementById('mainSubjectList');
+                var entry = document.createElement('li');
+                var listItemBody = document.createElement('div');
+                listItemBody.setAttribute('class', 'mainSubjectElement');
+                var wrapperBody = document.createElement('div');
+                wrapperBody.setAttribute('id', value.rows.item(i)["topicname"]);
+                wrapperBody.setAttribute('class', 'mainSubjectElementWrapper');
+   
+                entry.appendChild(wrapperBody);
+                wrapperBody.appendChild(listItemBody);
+                listItemBody.appendChild(document.createTextNode(value.rows.item(i)["topicname"]));
+                //listItemBody.appendChild(document.createTextNode(i));
+   
+                list.appendChild(entry);
+            }
+        });
+    }
 
     function loadUp() {
         var db = window.openDatabase("Database", "1.0", "Users", 200000);
