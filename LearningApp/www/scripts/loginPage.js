@@ -12,7 +12,7 @@
     }
 
     function loginClicked() {
-        //login();
+        login();
         window.location.href = "mainScreen.html";
     }
 

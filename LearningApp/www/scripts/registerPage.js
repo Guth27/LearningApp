@@ -47,6 +47,7 @@
     }
 
     function contains(tx) {
+        tx.executeSql('CREATE TABLE IF NOT EXISTS registeredusers (id integer unique, username, email unique, passwd)');
         tx.executeSql("SELECT * FROM registeredusers  WHERE username=\"" + username + "\" OR email=\"" + email + "\"", [], function (tx, value) {
             if (value.rows.length == 1) {
                 alreadyInUse = 1;
@@ -57,11 +58,11 @@
     }
 
     function registerNewUser(tx) {
-        var id;
-        tx.executeSql("SELECT * FROM registeredusers", [], function (tx, value) {
-            id = value.rows.lenght;
-        })
-        tx.executeSql("INSERT INTO registeredusers VALUES(\'" + id + "\', \'" + username + "\', + \'" + email + "\', \'" + passwd + "\')");
+       // var id;
+       // tx.executeSql("SELECT * FROM registeredusers", [], function (tx, value) {
+       //     id = value.rows.lenght;
+       // })
+        tx.executeSql("INSERT INTO registeredusers (username, email, passwd) VALUES(\'" + username + "\', + \'" + email + "\', \'" + passwd + "\')");
         console.log("registered");
     }
 

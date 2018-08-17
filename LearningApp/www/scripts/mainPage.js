@@ -2,6 +2,7 @@
     loadUp();
     appendList();
 
+    var topicID;
 
     function appendList() {
 
@@ -66,13 +67,22 @@
         //tx.executeSql("INSERT INTO maintopics VALUES(0,\'Mathematics\')");
         tx.executeSql('SELECT * FROM maintopics', [], function (tx, value) {
             for (i = 0; i < value.rows.length; i++){
-            console.log(value.rows.length);
                 var list = document.getElementById('mainSubjectList');
                 var entry = document.createElement('li');
                 var listItemBody = document.createElement('div');
                 listItemBody.setAttribute('class', 'mainSubjectElement');
                 var wrapperBody = document.createElement('div');
                 wrapperBody.setAttribute('id', value.rows.item(i)["topicname"]);
+
+                console.log(value.rows.item(i)["topicname"]);
+                wrapperBody.addEventListener("click", function () {
+                    //alert(this.id);
+                    topicID = this.id;
+                    var db = window.openDatabase("Database", "1.0", "SubTopics", 200000);
+                    db.transaction(getSubTopics, errorCB, successCB);
+                }, false);
+               
+
                 wrapperBody.setAttribute('class', 'mainSubjectElementWrapper');
    
                 entry.appendChild(wrapperBody);
@@ -80,6 +90,45 @@
                 listItemBody.appendChild(document.createTextNode(value.rows.item(i)["topicname"]));
                 //listItemBody.appendChild(document.createTextNode(i));
    
+                list.appendChild(entry);
+            }
+        });
+    }
+
+    function getSubTopics(tx) {
+        console.log(topicID);
+        tx.executeSql("CREATE TABLE IF NOT EXISTS " + topicID + " (subtopicname, difficulty)");
+
+        //tx.executeSql("INSERT INTO " + topicID + " VALUES(\'Basics\', 1)");
+       // tx.executeSql("INSERT INTO " + topicID + " VALUES(\'Geometry\', 1)");
+       // tx.executeSql("INSERT INTO " + topicID + " VALUES(\'Logic\', 1)");
+       // tx.executeSql("INSERT INTO " + topicID + " VALUES(\'Algebra\', 1)");
+       // tx.executeSql("INSERT INTO " + topicID + " VALUES(\'Calculus\', 1)");
+
+
+        var list = document.getElementById('mainSubjectList');
+        list.innerHTML = '';
+
+        tx.executeSql("SELECT * FROM " + topicID, [], function (tx, value) {
+            for (i = 0; i < value.rows.length; i++) {
+                var list = document.getElementById('mainSubjectList');
+                var entry = document.createElement('li');
+                var listItemBody = document.createElement('div');
+                listItemBody.setAttribute('class', 'mainSubjectElement');
+                var wrapperBody = document.createElement('div');
+                wrapperBody.setAttribute('id', value.rows.item(i)["subtopicname"]);
+
+               
+                wrapperBody.addEventListener("click", function () {
+                    alert(this.id);
+                }, false);
+
+                wrapperBody.setAttribute('class', 'mainSubjectElementWrapper');
+
+                entry.appendChild(wrapperBody);
+                wrapperBody.appendChild(listItemBody);
+                listItemBody.appendChild(document.createTextNode(value.rows.item(i)["subtopicname"]));
+
                 list.appendChild(entry);
             }
         });
