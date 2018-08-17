@@ -13,18 +13,28 @@
     var maxpage = 3;
 
     function previous() {
-        console.log("prev");
         if (currentpage > 1) {
-            currentpage = currentpage - 1;
+            currentpage = currentpage - 1;        
+            document.getElementById("nextButton").hidden = false;
+            if (currentpage == 1) {
+                document.getElementById("previousButton").hidden = true;
+            }
+        } else {
+            document.getElementById("previousButton").hidden = true;
         }
         var db = window.openDatabase("Database", "1.0", "subjectdata", 200000);
         db.transaction(getpage, errorCB, successCB);
     }
 
     function next() {
-        console.log("maxpage");
         if (currentpage < maxpage) {
             currentpage = currentpage + 1;
+            document.getElementById("previousButton").hidden = false;
+            if (currentpage == maxpage) {
+                document.getElementById("nextButton").hidden = true;
+            }
+        } else {
+            document.getElementById("nextButton").hidden = true;
         }
         var db = window.openDatabase("Database", "1.0", "subjectdata", 200000);
         db.transaction(getpage, errorCB, successCB);
@@ -36,8 +46,8 @@
         });
     }
     function getFirstPage(tx) {
- 
-        console.log(tablename);
+
+        document.getElementById("previousButton").hidden = true;
 
        tx.executeSql("CREATE TABLE IF NOT EXISTS " + tablename + " (page, pagetext)");
      // tx.executeSql("INSERT INTO " + tablename + " VALUES(\'1\', \'Page one example text.\')");
