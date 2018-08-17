@@ -120,7 +120,9 @@
 
                
                 wrapperBody.addEventListener("click", function () {
-                    alert(this.id);
+                    setName(this.id);
+                    window.location.href = "reader.html";
+                    //alert(subjectInfo.getTopicName());
                 }, false);
 
                 wrapperBody.setAttribute('class', 'mainSubjectElementWrapper');

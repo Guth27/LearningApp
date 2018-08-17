@@ -13,30 +13,19 @@
     <title>Learning App Main Screen</title>
 </head>
 <body>
-    <button id="sideMenuButton">Menu</button>
+    <p id="topicname"></p>
 
-    <div id="mainScreenContent">
-        <h1 id="usernameHolder">Title</h1>
-        <p id="emailHolder">Main Screen</p>
+    <div>
+        <p id="contentHolder"></p>
     </div>
 
-    <ul id="mainSubjectList"></ul>
-
-    <div id="sideMenu">
-        <button id="logOutButton">LogOut</button>
-        <button id="sideMenuCloseButton">Menu</button>
-        <p class="menuItem" id="menuItem_Main">MainMenu</p>
-        <p class="menuItem" id="menuItem_Profile">Profile</p>
-        <p class="menuItem" id="menuItem_Options">Options</p>
-        <p class="menuItem">Rewards</p>
-
-    </div>
+    <button id="previousButton" style="position: absolute; bottom: 5%; left: 5%; width:60px;height:30px;">Previous</button>
+    <button id="nextButton" style="position: absolute; bottom: 5%; right: 5%; width:60px;height:30px;">Next</button>
 
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="scripts/platformOverrides.js"></script>
     <script type="text/javascript" src="scripts/index.js"></script>
-    <script type="text/javascript" src="scripts/sideMenuControll.js"></script>
     <script type="text/javascript" src="scripts/subjectInfo.js"></script>
-    <script type="text/javascript" src="scripts/mainPage.js"></script>
+    <script type="text/javascript" src="scripts/readerScreen.js"></script>
 </body>
 </html>
